@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+  margin: 0;
+}
+.panel {
+  width: 80vw;
+  color: white;
+  height: 80vh;
+  position: relative;
+  background-repeat: no-repeat;
+  margin: 10px;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center;
+  flex: 0.5;
+  transition: flex ease-in 1s;
+}
+.panel h3 {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  opacity: 0;
+}
+.active {
+  flex: 5;
+}
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+  transition-delay: 0.4s;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100vw;
+  }
+  body{
+    background-color: black;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
